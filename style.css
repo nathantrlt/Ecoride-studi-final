@@ -1,0 +1,82 @@
+/* styles.css */
+
+/* Couleurs principales */
+:root {
+  --color-primary: hsl(122, 39%, 49%); /* Vert feuille */
+  --color-secondary: #8bc34a; /* Vert clair */
+  --color-tertiary: #ffeb3b; /* Jaune soleil (pour les accents si désiré) */
+  --color-background: #f1f8e9; /* Vert très clair pour le fond */
+  --color-text: #333; /* Texte sombre */
+}
+
+body {
+  font-family: sans-serif; /* Choisissez une police de caractères adaptée */
+  color: var(--color-text);
+  background-color: var(--color-background);
+}
+
+/* Styles de la barre de navigation */
+.navbar {
+  background-color: var(
+    --color-primary
+  ) !important; /* Vert foncé pour la barre de navigation */
+}
+
+.navbar-brand {
+  color: white !important; /* Texte blanc pour le nom de l'application */
+  font-weight: bold;
+}
+
+.navbar-nav .nav-link {
+  color: white !important; /* Texte blanc pour les liens de navigation */
+}
+
+.navbar-nav .nav-link.active {
+  font-weight: bold;
+}
+
+/* Styles de la section héro */
+#hero {
+  background-color: var(
+    --color-secondary
+  ); /* Vert clair pour la section héro */
+  color: white;
+  padding: 60px 0;
+}
+
+/* Styles des titres */
+h1 {
+  color: #f1f8e9;
+}
+h2,
+h3 {
+  color: var(--color-primary); /* Vert foncé pour les titres */
+}
+
+/* Styles du formulaire de recherche */
+#search form {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Styles du pied de page */
+footer {
+  background-color: var(
+    --color-primary
+  ) !important; /* Vert foncé pour le pied de page */
+  color: rgb(0, 0, 0);
+}
+
+footer a {
+  color: rgb(
+    0,
+    0,
+    0
+  ) !important; /* Texte blanc pour les liens du pied de page */
+  text-decoration: none;
+}
+.text-dark {
+  color: #000 !important; /* Utiliser !important pour s'assurer que ce style prime */
+}

@@ -1,0 +1,212 @@
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EcoRide - Covoiturage Écologique</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <!-- barre de navigation  -->
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+          <a class="navbar-brand" href="index.html">EcoRide</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Accueil</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="navbarDropdownCovoiturages"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  >Covoiturages</a
+                >
+                <ul
+                  class="dropdown-menu"
+                  aria-labelledby="navbarDropdownCovoiturages"
+                >
+                  <li>
+                    <a class="dropdown-item" href="rides.html"
+                      >Trouver un covoiturage</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="create_ride.html"
+                      >Proposer un covoiturage</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="navbarDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  >Mon compte</a
+                >
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <!-- Liens existants dans le menu déroulant (connexion, inscription, espace, historique) -->
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="connexion.html"
+                      id="link-connexion"
+                      >Se connecter</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="inscription.html"
+                      id="link-inscription"
+                      >S'inscrire</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="espace.html" id="link-espace"
+                      >Mon espace</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="historique.html"
+                      id="link-historique"
+                      >Mes trajets</a
+                    >
+                  </li>
+
+                  <!-- Lien Espace Employé  -->
+                  <li id="link-espace-employe" style="display: none">
+                    <a class="dropdown-item" href="espace_employe.html"
+                      >Espace employé</a
+                    >
+                  </li>
+
+                  <!-- Lien Espace Administrateur -->
+                  <li id="link-espace-administrateur" style="display: none">
+                    <a class="dropdown-item" href="admin.html"
+                      >Espace administrateur</a
+                    >
+                  </li>
+
+                  <!-- Lien de déconnexion existant -->
+                  <li id="link-deconnexion" style="display: none">
+                    <a class="dropdown-item" href="deconnexion.php"
+                      >Se déconnecter</a
+                    >
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section id="hero" class="jumbotron text-center">
+        <div class="container">
+          <h1 class="display-4">EcoRide - Pour un voyage Durable</h1>
+          <p class="lead">
+            Réduisez votre impact environnemental et économisez de l'argent
+            grâce au covoiturage.
+          </p>
+        </div>
+      </section>
+
+      <section id="about" class="container mt-5">
+        <div class="row">
+          <div class="col-md-8 mx-auto">
+            <h2>À propos d'EcoRide</h2>
+            <p>
+              EcoRide est une startup récemment créée en France qui a pour
+              objectif de réduire l'impact environnemental des déplacements en
+              encourageant le covoiturage. Nous prônons une approche écologique
+              et souhaitons nous faire connaître à travers un projet
+              d'application web mené par José, le directeur technique.
+            </p>
+            <p>
+              L'ambition d'EcoRide est de devenir la principale plateforme de
+              covoiturage pour les voyageurs soucieux de l'environnement et ceux
+              qui recherchent une solution économique pour leurs déplacements.
+              Il est important de souligner que la plateforme de covoiturage
+              doit gérer uniquement les déplacements en voitures.
+            </p>
+            <div class="row mt-4">
+              <div class="col-md-4">
+                <img
+                  src="placeholder1.jpg"
+                  class="img-fluid rounded"
+                  alt="Image 1 de présentation EcoRide"
+                />
+              </div>
+              <div class="col-md-4">
+                <img
+                  src="placeholder2.jpg"
+                  class="img-fluid rounded"
+                  alt="Image 2 de présentation EcoRide"
+                />
+              </div>
+              <div class="col-md-4">
+                <img
+                  src="placeholder3.jpg"
+                  class="img-fluid rounded"
+                  alt="Image 3 de présentation EcoRide"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-light text-center text-lg-start mt-5">
+      <div class="container p-4">
+        <div class="row">
+          <div class="col-lg-6 col-md-12 mb-4 mb-md-0 text-center">
+            <h5 class="text-uppercase">Nous Contacter</h5>
+            <p>Email: contact@ecoride.com</p>
+          </div>
+          <div class="col-lg-6 col-md-12 mb-4 mb-md-0 text-center">
+            <h5 class="text-uppercase">Mentions Légales</h5>
+            <p>
+              <a href="#" class="text-dark">Mentions Légales</a>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+        © 2025 EcoRide
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+    <script src="auth.js"></script>
+    <script src="admin.js"></script>
+  </body>
+</html>

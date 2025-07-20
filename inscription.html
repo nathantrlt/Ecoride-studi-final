@@ -1,0 +1,231 @@
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inscription</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <!-- Votre barre de navigation actuelle -->
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+          <a class="navbar-brand" href="index.html">EcoRide</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Accueil</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="navbarDropdownCovoiturages"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  >Covoiturages</a
+                >
+                <ul
+                  class="dropdown-menu"
+                  aria-labelledby="navbarDropdownCovoiturages"
+                >
+                  <li>
+                    <a class="dropdown-item" href="rides.html"
+                      >Trouver un covoiturage</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="create_ride.html"
+                      >Proposer un covoiturage</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="navbarDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  >Mon compte</a
+                >
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <!-- Liens existants dans le menu déroulant (connexion, inscription, espace, historique) -->
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="connexion.html"
+                      id="link-connexion"
+                      >Se connecter</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="inscription.html"
+                      id="link-inscription"
+                      >S'inscrire</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="espace.html" id="link-espace"
+                      >Mon espace</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="historique.html"
+                      id="link-historique"
+                      >Mes trajets</a
+                    >
+                  </li>
+
+                  <!-- Ajouter le lien Espace Employé si pertinent -->
+                  <li id="link-espace-employe" style="display: none">
+                    <a class="dropdown-item" href="espace_employe.html"
+                      >Espace employé</a
+                    >
+                  </li>
+
+                  <!-- Ajouter le lien Espace Administrateur ici (sera affiché conditionnellement par JS) -->
+                  <li id="link-espace-administrateur" style="display: none">
+                    <a class="dropdown-item" href="admin.html"
+                      >Espace administrateur</a
+                    >
+                  </li>
+
+                  <!-- Lien de déconnexion existant -->
+                  <li id="link-deconnexion" style="display: none">
+                    <a class="dropdown-item" href="deconnexion.php"
+                      >Se déconnecter</a
+                    >
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="flex-grow-1 container mt-5 mb-4">
+      <div class="row">
+        <div class="col-md-6 mx-auto">
+          <h2>Créer un compte</h2>
+          <form id="signup-form">
+            <div class="mb-3">
+              <label for="pseudo" class="form-label">Pseudo</label>
+              <input type="text" class="form-control" id="pseudo" required />
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Adresse email</label>
+              <input type="email" class="form-control" id="email" required />
+            </div>
+            <div class="mb-3">
+              <label for="password" class="form-label">Mot de passe</label>
+              <input
+                type="password"
+                class="form-control"
+                id="password"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <label for="confirm-password" class="form-label"
+                >Confirmer le mot de passe</label
+              >
+              <input
+                type="password"
+                class="form-control"
+                id="confirm-password"
+                required
+              />
+            </div>
+
+            <!-- AJOUT DES CHAMPS SUPPLEMENTAIRES (IDENTIQUES A create-employee-form) -->
+            <div class="mb-3">
+              <label for="nom" class="form-label">Nom :</label>
+              <input type="text" class="form-control" id="nom" required />
+            </div>
+            <div class="mb-3">
+              <label for="prenom" class="form-label">Prénom :</label>
+              <input type="text" class="form-control" id="prenom" required />
+            </div>
+            <div class="mb-3">
+              <label for="telephone" class="form-label">Téléphone :</label>
+              <input type="tel" class="form-control" id="telephone" />
+              <!-- type="tel" pour les numéros de téléphone -->
+            </div>
+            <div class="mb-3">
+              <label for="adresse" class="form-label">Adresse :</label>
+              <input type="text" class="form-control" id="adresse" />
+            </div>
+            <div class="mb-3">
+              <label for="date-naissance" class="form-label"
+                >Date de naissance :</label
+              >
+              <input type="date" class="form-control" id="date-naissance" />
+              <!-- type="date" pour un sélecteur de date -->
+            </div>
+            <!-- FIN AJOUT -->
+
+            <button type="submit" class="btn btn-primary">S'inscrire</button>
+          </form>
+          <div id="signup-message" class="mt-3">
+            <!-- Les messages de succès ou d'erreur s'afficheront ici -->
+          </div>
+          <p class="mt-3 text-center">
+            Déjà un compte ? <a href="connexion.html">Se connecter</a>
+          </p>
+          <!-- Lien Connexion (à créer) -->
+        </div>
+      </div>
+    </main>
+
+    <!-- Inclure le pied de page -->
+    <footer class="bg-light text-center text-lg-start mt-4">
+      <div class="container p-4">
+        <div class="row">
+          <div class="col-lg-6 col-md-12 mb-4 mb-md-0 text-center">
+            <h5 class="text-uppercase">Nous Contacter</h5>
+            <p>Email: contact@ecoride.com</p>
+          </div>
+          <div class="col-lg-6 col-md-12 mb-4 mb-md-0 text-center">
+            <h5 class="text-uppercase">Mentions Légales</h5>
+            <p>
+              <a href="#" class="text-dark">Mentions légales</a>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+        © 2025 EcoRide - Nathan
+      </div>
+    </footer>
+
+    <!-- Lien vers Bootstrap JS (assurez-vous que le chemin est correct) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Lien vers votre script JavaScript pour cette page -->
+    <script src="inscription.js"></script>
+    <script src="auth.js"></script>
+  </body>
+</html>

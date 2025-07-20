@@ -1,0 +1,268 @@
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Covoiturage</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <!--  barre de navigation  -->
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+          <a class="navbar-brand" href="index.html">EcoRide</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Accueil</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="navbarDropdownCovoiturages"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  >Covoiturages</a
+                >
+                <ul
+                  class="dropdown-menu"
+                  aria-labelledby="navbarDropdownCovoiturages"
+                >
+                  <li>
+                    <a class="dropdown-item" href="rides.html"
+                      >Trouver un covoiturage</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="create_ride.html"
+                      >Proposer un covoiturage</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="navbarDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  >Mon compte</a
+                >
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <!-- Liens existants dans le menu déroulant (connexion, inscription, espace, historique) -->
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="connexion.html"
+                      id="link-connexion"
+                      >Se connecter</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="inscription.html"
+                      id="link-inscription"
+                      >S'inscrire</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="espace.html" id="link-espace"
+                      >Mon espace</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="historique.html"
+                      id="link-historique"
+                      >Mes trajets</a
+                    >
+                  </li>
+
+                  <!--  lien Espace Employé  -->
+                  <li id="link-espace-employe" style="display: none">
+                    <a class="dropdown-item" href="espace_employe.html"
+                      >Espace employé</a
+                    >
+                  </li>
+
+                  <!--  lien Espace Administrateur  -->
+                  <li id="link-espace-administrateur" style="display: none">
+                    <a class="dropdown-item" href="admin.html"
+                      >Espace administrateur</a
+                    >
+                  </li>
+
+                  <!-- Lien de déconnexion  -->
+                  <li id="link-deconnexion" style="display: none">
+                    <a class="dropdown-item" href="deconnexion.php"
+                      >Se déconnecter</a
+                    >
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container mt-5 mb-4">
+      <div class="row">
+        <div class="col-md-8 mx-auto">
+          <h2>Trouver un Covoiturage</h2>
+          <form id="search-ride-form">
+            <!-- Champs de recherche de base -->
+            <div class="mb-3">
+              <label for="departure-ride" class="form-label">Départ</label>
+              <input
+                type="text"
+                class="form-control"
+                id="departure-ride"
+                placeholder="Entrez le lieu de départ"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <label for="arrival-ride" class="form-label">Arrivée</label>
+              <input
+                type="text"
+                class="form-control"
+                id="arrival-ride"
+                placeholder="Entrez le lieu d'arrivée"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <label for="date-ride" class="form-label">Date</label>
+              <input type="date" class="form-control" id="date-ride" required />
+            </div>
+
+            <hr />
+            <!-- Séparateur visuel -->
+
+            <!-- Conteneur déroulant pour les filtres -->
+            <div class="collapse" id="filtersCollapse">
+              <h4>Filtres optionnels</h4>
+
+              <div class="mb-3 form-check">
+                <input
+                  type="checkbox"
+                  class="form-check-input"
+                  id="filter-ecological"
+                />
+                <label class="form-check-label" for="filter-ecological"
+                  >Voyage écologique uniquement</label
+                >
+              </div>
+
+              <div class="mb-3">
+                <label for="filter-price-max" class="form-label"
+                  >Prix maximum (crédits)</label
+                >
+                <input
+                  type="number"
+                  class="form-control"
+                  id="filter-price-max"
+                  placeholder="Prix maximum"
+                />
+              </div>
+
+              <div class="mb-3">
+                <label for="filter-duration-max" class="form-label"
+                  >Durée maximum (heures)</label
+                >
+                <input
+                  type="number"
+                  class="form-control"
+                  id="filter-duration-max"
+                  placeholder="Durée maximum"
+                />
+              </div>
+
+              <div class="mb-3">
+                <label for="filter-rating-min" class="form-label"
+                  >Note minimale du conducteur (sur 5)</label
+                >
+                <input
+                  type="number"
+                  class="form-control"
+                  id="filter-rating-min"
+                  step="0.1"
+                  min="0"
+                  max="5"
+                  placeholder="Note minimale"
+                />
+              </div>
+            </div>
+            <!-- Fin du conteneur déroulant -->
+            <div class="d-flex justify-content-between align-items-center mt-3">
+              <!-- Bouton pour basculer l'affichage des filtres -->
+              <button
+                class="btn btn-secondary"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#filtersCollapse"
+                aria-expanded="false"
+                aria-controls="filtersCollapse"
+              >
+                Afficher les filtres optionnels
+              </button>
+
+              <!-- Bouton de soumission du formulaire -->
+              <button type="submit" class="btn btn-primary">Rechercher</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div id="ride-results" class="mt-4">
+        <!-- Les résultats de la recherche seront affichés ici -->
+      </div>
+    </main>
+
+    <footer class="bg-light text-center text-lg-start mt-4">
+      <div class="container p-4">
+        <div class="row">
+          <div class="col-lg-6 col-md-12 mb-4 mb-md-0 text-center">
+            <h5 class="text-uppercase">Nous contacter</h5>
+            <p>Email: contact@ecoride.com</p>
+          </div>
+          <div class="col-lg-6 col-md-12 mb-4 mb-md-0 text-center">
+            <h5 class="text-uppercase">Mentions légales</h5>
+            <p>
+              <a href="#" class="text-dark">Mentions légales</a>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+        © 2025 EcoRide - Nathan
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+    <script src="auth.js"></script>
+  </body>
+</html>

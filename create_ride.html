@@ -1,0 +1,260 @@
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Créer un covoiturage</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <!-- Votre barre de navigation actuelle -->
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+          <a class="navbar-brand" href="index.html">EcoRide</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Accueil</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="navbarDropdownCovoiturages"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  >Covoiturages</a
+                >
+                <ul
+                  class="dropdown-menu"
+                  aria-labelledby="navbarDropdownCovoiturages"
+                >
+                  <li>
+                    <a class="dropdown-item" href="rides.html"
+                      >Trouver un covoiturage</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="create_ride.html"
+                      >Proposer un covoiturage</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="navbarDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  >Mon compte</a
+                >
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <!-- Liens existants dans le menu déroulant (connexion, inscription, espace, historique) -->
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="connexion.html"
+                      id="link-connexion"
+                      >Se connecter</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="inscription.html"
+                      id="link-inscription"
+                      >S'inscrire</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="espace.html" id="link-espace"
+                      >Mon espace</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="historique.html"
+                      id="link-historique"
+                      >Mes trajets</a
+                    >
+                  </li>
+
+                  <!-- Ajouter le lien Espace Employé si pertinent -->
+                  <li id="link-espace-employe" style="display: none">
+                    <a class="dropdown-item" href="espace_employe.html"
+                      >Espace employé</a
+                    >
+                  </li>
+
+                  <!-- Ajouter le lien Espace Administrateur ici (sera affiché conditionnellement par JS) -->
+                  <li id="link-espace-administrateur" style="display: none">
+                    <a class="dropdown-item" href="admin.html"
+                      >Espace administrateur</a
+                    >
+                  </li>
+
+                  <!-- Lien de déconnexion existant -->
+                  <li id="link-deconnexion" style="display: none">
+                    <a class="dropdown-item" href="deconnexion.php"
+                      >Se déconnecter</a
+                    >
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="flex-grow-1 container mt-5 mb-4">
+      <div class="row">
+        <div class="col-md-8 mx-auto">
+          <h2>Proposer un Covoiturage</h2>
+
+          <div id="create-ride-message" class="alert" style="display: none">
+            <!-- Messages de succès ou d'erreur -->
+          </div>
+
+          <form id="create-ride-form">
+            <div class="mb-3">
+              <label for="departure-address" class="form-label"
+                >Adresse de départ</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="departure-address"
+                required
+              />
+            </div>
+
+            <div class="mb-3">
+              <label for="arrival-address" class="form-label"
+                >Adresse d'arrivée</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="arrival-address"
+                required
+              />
+            </div>
+
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="departure-date" class="form-label">Date</label>
+                <input
+                  type="date"
+                  class="form-control"
+                  id="departure-date"
+                  required
+                />
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="departure-time" class="form-label"
+                  >Heure de départ</label
+                >
+                <input
+                  type="time"
+                  class="form-control"
+                  id="departure-time"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="available-seats" class="form-label"
+                >Nombre de places disponibles</label
+              >
+              <input
+                type="number"
+                class="form-control"
+                id="available-seats"
+                required
+                min="1"
+              />
+            </div>
+
+            <div class="mb-3">
+              <label for="price" class="form-label"
+                >Prix par personne (en crédits)</label
+              >
+              <input
+                type="number"
+                class="form-control"
+                id="price"
+                required
+                min="0"
+              />
+            </div>
+
+            <div class="mb-3">
+              <label for="vehicle-select" class="form-label">Véhicule</label>
+              <select class="form-select" id="vehicle-select" required>
+                <option value="">-- Sélectionner un véhicule --</option>
+                <!-- Les options seront remplies par JS -->
+              </select>
+              <small class="form-text text-muted">
+                Vos véhicules disponibles. Ajoutez un véhicule depuis
+                <a href="espace.html">Mon Espace</a> si nécessaire.
+              </small>
+            </div>
+
+            <button type="submit" class="btn btn-primary">
+              Proposer le covoiturage
+            </button>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <!-- Inclure le pied de page -->
+    <footer class="bg-light text-center text-lg-start mt-4">
+      <div class="container p-4">
+        <div class="row">
+          <div class="col-lg-6 col-md-12 mb-4 mb-md-0 text-center">
+            <h5 class="text-uppercase">Nous Contacter</h5>
+            <p>Email: contact@ecoride.com</p>
+          </div>
+          <div class="col-lg-6 col-md-12 mb-4 mb-md-0 text-center">
+            <h5 class="text-uppercase">Mentions Légales</h5>
+            <p>
+              <a href="#" class="text-dark">Mentions légales</a>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+        © 2025 EcoRide - Nathan
+      </div>
+    </footer>
+
+    <!-- Lien vers Bootstrap JS (assurez-vous que le chemin est correct) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Lien vers votre script JavaScript pour cette page -->
+    <script src="create_ride.js"></script>
+    <script src="auth.js"></script>
+  </body>
+</html>
