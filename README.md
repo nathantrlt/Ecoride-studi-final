@@ -23,10 +23,6 @@ Les composants logiciels suivants sont nécessaires pour le déploiement local. 
 
 Le dépôt contient les principaux répertoires et fichiers suivants :
 
-*   `/`: Répertoire racine du projet.
-*   `/backend/`: Contient les scripts PHP côté serveur (gestion des utilisateurs, véhicules, covoiturages, etc.).
-*   `/css/`: Fichiers CSS pour la mise en forme.
-*   `/js/`: Fichiers JavaScript pour les interactions côté client.
 *   `/vendor/`: Dossier géré par Composer contenant les dépendances PHP.
 *   `index.html`: Page d'accueil principale.
 *   `README.md`: Ce document.
@@ -43,7 +39,7 @@ Suivez les étapes ci-dessous pour configurer votre environnement local :
 Ouvrez une interface en ligne de commande (terminal, Git Bash, etc.) et exécutez la commande suivante pour cloner le code source depuis le dépôt distant :
 
 ```bash
-git clone https://github.com/nathantrlt/Ecoride-final.git
+gh repo clone nathantrlt/Ecoride-studi-final
 cd Ecoride-final
 ```
 
